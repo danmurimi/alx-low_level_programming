@@ -6,19 +6,20 @@
  */
 char *rot13(char *str)
 {
-	int indx1 = 0, indx2;
-	char alphabet[52] = {ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz};
-	char rot13key[52] = {NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm};
+	int x, y;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		for (indx2 = 0; indx2 < 52; indx2++)
+		for (y = 0; input[y] != '\0'; y++)
 		{
-			if (str[indx1] == alphabet[indx2])
+			if (s[x] == input[y])
 			{
-				str[indx1] = rot13key[indx2];
+				s[x] = output[y];
 				break;
 			}
 		}
-		indx1++;
 	}
 	return (str);
 }
